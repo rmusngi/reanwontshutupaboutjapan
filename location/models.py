@@ -1,0 +1,33 @@
+from django.db import models
+
+class destination(models.Model):
+    location = models.CharField(max_length=200)
+    forex = models.DecimalField(max_digits=1000, decimal_places=2)
+    weather = models.DecimalField(max_digits=3, decimal_places=2)
+    main_image = models.ImageField(upload_to='photos/%Y/%m/%d')
+    event_name_1 = models.CharField(max_length=200, blank=True)
+    event_desc_1 = models.CharField(max_length=1000, blank=True)
+    event_photo_1 = models.ImageField(upload_to='photos/events/%Y/%m/%d', blank=True)
+    event_name_2 = models.CharField(max_length=200, blank=True)
+    event_desc_2 = models.CharField(max_length=1000, blank=True)
+    event_photo_2 = models.ImageField(upload_to='photos/events/%Y/%m/%d', blank=True)
+    event_name_3 = models.CharField(max_length=200, blank=True)
+    event_desc_3 = models.CharField(max_length=1000, blank=True)
+    event_photo_3 = models.ImageField(upload_to='photos/events/%Y/%m/%d', blank=True)
+    discount1_name = models.CharField(max_length=50, blank=True)
+    discount1_url = models.URLField(blank=True)
+    discount2_name = models.CharField(max_length=50, blank=True)
+    discount2_url = models.URLField(blank=True)
+    discount3_name = models.CharField(max_length=50, blank=True)
+    discount3_url = models.URLField(blank=True)
+    attraction_name1 = models.CharField(max_length=50, blank=True)
+    attraction_url1 = models.URLField(max_length=200, blank=True)
+    attraction_image1 = models.ImageField(upload_to='photos/attraction/%Y/%m/%d', blank=True)
+    attraction_name2 = models.CharField(max_length=50, blank=True)
+    attraction_url2 = models.URLField(max_length=200, blank=True)
+    attraction_image2 = models.ImageField(upload_to='photos/attraction/%Y/%m/%d', blank=True)
+    attraction_name3 = models.CharField(max_length=50, blank=True)
+    attraction_url3 = models.URLField(max_length=200, blank=True)
+    attraction_image3 = models.ImageField(upload_to='photos/attraction/%Y/%m/%d', blank=True)
+    def __str__(self):
+        return self.content
