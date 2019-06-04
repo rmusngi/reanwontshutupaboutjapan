@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load humanize%}
 <h1>DILAWAN PWEH</h1>
 
 <h2>Where do you wanna go</h2>
+{% if locations%}
+    {% for destination in locations %}
+        <img src="{{destination.main_image.url}}" height="350px" width="500px">
+        <a href="{% url 'destination' destination.id%}"><h3>{{ destination.location }}</h3></a>
+       
+    {% endfor %}
+{% else %}
+    <h3>You can't go nowhere, son</h3>
+{% endif %}
 {% endblock %}

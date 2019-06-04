@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% block content %}
-<h1>DILAWAN PWEH</h1>
 
-<h2>Location</h2>
-<h2>Forex: $USD = 1000 PHP</h2>
-<h2>Weather: Dilawan degrees</h2>
-<h2>Airfare: 10000 PHP</h2>
-<h2>Attractions: Rare Digong sighting</h2>
-<h2>Mobile Wifi: Supersurf50</h2>
-<h2>Discounts : Dilawan</h2>
-<h2>Train passes: Maglakad ka</h2>
+<img src="{{city.main_image.url}}" alt="" width="800" height="400">
+<h1>{{city.location}}</h1>
+
+<h2>Forex: $USD = {{city.forex |intcomma }} PHP</h2>
+<h2>Weather: {{city.weather}} degrees</h2>
+<h1>Attraction</h1>
+<img src="{{city.attraction_image1.url}}" alt="" width="300" height="300">
+<a href="{{city.attraction_url1}}"><h2>{{city.attraction_name1}}</h2></a>
+<h1>events</h1>
+<ul>
+    <li>{{city.attraction_name1}}</h2></a>{{event_name_1}}</li>
+    <p>{{city.event_desc_1}}</p>
+</ul>
+<h1>discounts</h1>
+<ul>
+    <a href={{discount1_url}}><li>{{city.discount1_name}}</li></a>
+</ul>
 {% endblock %}

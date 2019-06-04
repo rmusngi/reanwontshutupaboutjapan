@@ -3,7 +3,7 @@ from django.db import models
 class destination(models.Model):
     location = models.CharField(max_length=200)
     forex = models.DecimalField(max_digits=1000, decimal_places=2)
-    weather = models.DecimalField(max_digits=3, decimal_places=2)
+    weather = models.DecimalField(max_digits=5, decimal_places=2)
     main_image = models.ImageField(upload_to='photos/%Y/%m/%d')
     event_name_1 = models.CharField(max_length=200, blank=True)
     event_desc_1 = models.CharField(max_length=1000, blank=True)
@@ -30,4 +30,4 @@ class destination(models.Model):
     attraction_url3 = models.URLField(max_length=200, blank=True)
     attraction_image3 = models.ImageField(upload_to='photos/attraction/%Y/%m/%d', blank=True)
     def __str__(self):
-        return self.content
+        return self.location
